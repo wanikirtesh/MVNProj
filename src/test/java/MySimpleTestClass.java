@@ -7,22 +7,11 @@ import util.TestDriverManager;
 
 import java.time.Duration;
 
-public class MySimpleTestClass {
+public class MySimpleTestClass extends BaseTest{
 
-    WebDriver driver;
-    @BeforeMethod
-    public void init(){
-        driver = TestDriverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(TestConfigReader.getValue("app.url"));
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        driver.close();
-    }
     @Test
     public void validateValidLoginCredentials(){
+        driver.get(TestConfigReader.getValue("app.url"));
         driver.findElement(By.xpath("//input[@id='user']")).sendKeys("admin");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("pa$$w0rd");
         driver.findElement(By.xpath("//input[@id='login']")).click();
@@ -32,6 +21,7 @@ public class MySimpleTestClass {
 
     @Test
     public void validateInvalidLoginCredentials(){
+        driver.get(TestConfigReader.getValue("app.url"));
         driver.findElement(By.xpath("//input[@id='user']")).sendKeys("adm1n");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("pa$$w0rd");
         driver.findElement(By.xpath("//input[@id='login']")).click();
