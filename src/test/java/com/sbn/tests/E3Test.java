@@ -1,3 +1,5 @@
+package com.sbn.tests;
+
 import com.sbn.entity.Employee;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,7 +10,6 @@ import util.TestConfigReader;
 import java.util.List;
 
 public class E3Test extends BaseTest {
-
 
     @Test
     public void validateInlineData(){
