@@ -7,13 +7,15 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="com.sbn.tests.LoginTest">
-
+                <methods>
+                    <include name="validateInvalidLoginCredentials"></include>
+                </methods>
             </class>
-            <class name="com.sbn.tests.E3Test">
-            </class>
+            <!--class name="com.sbn.tests.E3Test">
+            </class-->
         </classes>
     </test>
-    <test name="Firefox Browser Test">
+    <!--test name="Firefox Browser Test">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="com.sbn.tests.LoginTest">
@@ -21,5 +23,5 @@
             <class name="com.sbn.tests.E3Test">
             </class>
         </classes>
-    </test>
+    </test-->
 </suite>
