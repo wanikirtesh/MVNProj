@@ -10,7 +10,7 @@ import util.TestDriverManager;
 import java.time.Duration;
 
 public class BaseTest {
-    WebDriver driver;
+    protected WebDriver driver;
     @BeforeMethod
     @Parameters({"browser"})
     public void init(String browser){
