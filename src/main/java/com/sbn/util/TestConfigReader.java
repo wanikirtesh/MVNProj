@@ -1,4 +1,4 @@
-package util;
+package com.sbn.util;
 
 import java.util.ResourceBundle;
 

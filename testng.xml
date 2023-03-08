@@ -5,15 +5,14 @@
     <parameter name="password" value="pa$$w0rd"></parameter>
     <test name="Chrome Browser Test">
         <parameter name="browser" value="chrome"></parameter>
-        <classes>
-            <class name="com.sbn.tests.LoginTest">
-                <methods>
-                    <include name="validateInvalidLoginCredentials"></include>
-                </methods>
-            </class>
-            <!--class name="com.sbn.tests.E3Test">
-            </class-->
-        </classes>
+        <groups>
+            <run>
+                <include name="sanity"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.sbn.tests"></package>
+        </packages>
     </test>
     <!--test name="Firefox Browser Test">
         <parameter name="browser" value="firefox"></parameter>

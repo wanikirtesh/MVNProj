@@ -2,7 +2,7 @@ package com.sbn.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import util.TestConfigReader;
+import com.sbn.util.TestConfigReader;
 
 public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {

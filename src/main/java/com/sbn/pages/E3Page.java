@@ -1,15 +1,18 @@
 package com.sbn.pages;
 
 import com.sbn.entity.Employee;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import util.TestConfigReader;
+import com.sbn.util.TestConfigReader;
 
 import java.util.List;
 
 public class E3Page extends BasePage {
+    private Logger LOGGER = LogManager.getLogger();
     public E3Page(WebDriver driver){
         super(driver);
         driver.get(TestConfigReader.getValue("app.url.e3"));
@@ -17,6 +20,7 @@ public class E3Page extends BasePage {
 
     public boolean validateAllInlineRows() {
         List<WebElement> rows = driver.findElements(By.xpath("//table[@class='order-table']/tbody/tr"));
+        LOGGER.info("found "+rows.size()+" records in data table");
         for (WebElement row : rows) {
             row.findElement(By.xpath(".//a[text()='Inline']")).click();
             WebElement iframe = driver.findElement(By.xpath("//td/iframe"));
@@ -27,11 +31,13 @@ public class E3Page extends BasePage {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[contains(@src,'close.png')]")));
             driver.findElement(By.xpath("//img[contains(@src,'close.png')]")).click();
         }
+
         return true;
     }
 
     public boolean validateAllPopups() {
         List<WebElement> rows = driver.findElements(By.xpath("//table[@class='order-table']/tbody/tr"));
+        LOGGER.info("found "+rows.size()+" records in data table");
         for (WebElement row : rows) {
             row.findElement(By.xpath(".//a[text()='Details']")).click();
             Employee mainTableEmployee = getEmployeeFromRow(row);

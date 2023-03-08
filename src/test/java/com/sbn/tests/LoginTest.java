@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class LoginTest extends BaseTest{
-    @Test
+    @Test(groups = {"sanity"})
     @Parameters({"user","password"})
     public void validateValidLoginCredentials(String user, String password){
         LoginPage loginPage = new LoginPage(driver);
@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest{
         Assert.assertTrue(isLoggedIn);
     }
 
-    @Test(dataProvider = "simpleInvalidCred")
+    @Test(dataProvider = "simpleInvalidCred",groups = {"regression"})
     public void validateInvalidLoginCredentials(String user, String password){
         LoginPage loginPage = new LoginPage(driver);
         boolean isLoggedIn = loginPage.doLogin(user,password);

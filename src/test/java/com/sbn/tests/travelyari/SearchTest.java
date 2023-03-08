@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SearchTest extends BaseTest {
-    @Test(dataProvider = "fromToData")
+    @Test(dataProvider = "fromToData",groups = {"sanity"})
     public void validateIfResultPageShowsDataAsEnteredOnSearchPage(String from,String to){
         SearchPage searchPage = new SearchPage(driver);
         SearchResultPage searchResultPage = searchPage.search(from,to);
