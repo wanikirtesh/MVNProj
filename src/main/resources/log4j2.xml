@@ -20,9 +20,7 @@
             <AppenderRef ref="myFile"/>
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="com.sbn" level="error" additivity="false">
-            <AppenderRef ref="errorFile"/>
-        </Logger>
+
 
 
     </Loggers>
