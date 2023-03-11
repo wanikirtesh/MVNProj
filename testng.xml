@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="My Example Project">
-    <parameter name="user" value="admin"></parameter>
-    <parameter name="password" value="pa$$w0rd"></parameter>
-    <test name="Chrome Browser Test">
-        <parameter name="browser" value="chrome"></parameter>
-        <groups>
-            <run>
-                <include name="sanity"></include>
-            </run>
-        </groups>
-        <packages>
-            <package name="com.sbn.tests"></package>
-        </packages>
-    </test>
-    <!--test name="Firefox Browser Test">
-        <parameter name="browser" value="firefox"></parameter>
+    <test name="My Test 1">
         <classes>
-            <class name="com.sbn.tests.LoginTest">
-            </class>
-            <class name="com.sbn.tests.E3Test">
-            </class>
+            <class name="com.sbn.tests.Class1"></class>
+            <class name="com.sbn.tests.Class2"></class>
         </classes>
-    </test-->
+    </test>
+
+    <test name="My Test 2">
+        <classes>
+            <class name="com.sbn.tests.Class1"></class>
+            <class name="com.sbn.tests.Class2"></class>
+        </classes>
+    </test>
+
+    <test name="My Test 3">
+        <classes>
+            <class name="com.sbn.tests.Class1"></class>
+            <class name="com.sbn.tests.Class2"></class>
+        </classes>
+    </test>
+
 </suite>
